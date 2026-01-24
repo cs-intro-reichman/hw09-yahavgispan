@@ -50,13 +50,17 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        String result = "";
+        String result = "(";
         ListIterator current = new ListIterator(first);
         while (current.hasNext()) {
             CharData cd = current.next();
             result = result + cd;
+            if (current.hasNext()) {
+                result = result + " ";
+            }
 
         }
+        result = result + ")";
         return result;
     }
 
@@ -172,4 +176,5 @@ public class List {
         // Returns an iterator that starts in that element
         return new ListIterator(current);
     }
+
 }
